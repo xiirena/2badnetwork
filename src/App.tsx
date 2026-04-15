@@ -500,7 +500,7 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* ===== CONNECT PAGE (NEW GUIDE) ===== */}
+          {/* ===== CONNECT PAGE (FIXED & BALANCED) ===== */}
           {activeTab === 'connect' && (
             <motion.div key="connect" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.05 }} className="min-h-screen pt-32 pb-20">
               <div className="max-w-5xl mx-auto px-6">
@@ -514,11 +514,11 @@ export default function App() {
                   <div className="bg-[#0d0b1a] border border-blue-900/40 hover:border-blue-500/60 rounded-[2rem] p-8 shadow-[0_0_30px_rgba(59,130,246,0.05)] hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-all duration-300">
                      <h3 className="text-2xl font-black uppercase text-blue-400 mb-6 flex items-center gap-3"><Monitor size={28} /> Java Edition</h3>
                      <ol className="space-y-5 text-white/70">
-                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">1</span> <span className="mt-1">Open Minecraft Java Edition (Version 1.21+).</span></li>
-                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">2</span> <span className="mt-1">Click on <strong>"Multiplayer"</strong> and then <strong>"Add Server"</strong>.</span></li>
-                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">3</span> <span className="mt-1">Set Server Address to <strong className="text-white selection:bg-blue-500">{serverIP}</strong>.</span></li>
-                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">4</span> <span className="mt-1">Set the server name to </strong>2Bad MC.</span></li>
-                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">5</span> <span className="mt-1">Click <strong>"Done"</strong> and double-click to join!</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">1</span> <span className="mt-1">Open Minecraft Java Edition (1.21+).</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">2</span> <span className="mt-1">Click <strong>Multiplayer</strong> then <strong>Add Server</strong>.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">3</span> <span className="mt-1">Enter IP: <strong className="text-white selection:bg-blue-500">{serverIP}</strong></span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">4</span> <span className="mt-1">Set the Server Name to <strong>2Bad MC</strong>.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">5</span> <span className="mt-1">Click <strong>Done</strong> and double-click to join!</span></li>
                      </ol>
                   </div>
 
@@ -527,32 +527,22 @@ export default function App() {
                      <h3 className="text-2xl font-black uppercase text-purple-400 mb-6 flex items-center gap-3"><Smartphone size={28} /> Bedrock Edition</h3>
                      <ol className="space-y-5 text-white/70">
                        <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">1</span> <span className="mt-1">Open Minecraft Bedrock Edition.</span></li>
-                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">2</span> <span className="mt-1">Click <strong>"Play"</strong> and navigate to the <strong>"Servers"</strong> tab.</span></li>
-                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">3</span> <span className="mt-1">Scroll to the bottom and click <strong>"Add Server"</strong>.</span></li>
-                       <li className="flex gap-4 items-start">
-                         <span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">4</span> 
-                         <div className="mt-1">
-                           Server Name: <strong className="text-white">2BAD MC</strong><br/>
-                           Server Address: <strong className="text-white selection:bg-purple-500">{serverIP}</strong><br/>
-                           Port: <strong className="text-white">19132</strong>
-                         </div>
-                       </li>
-                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">5</span> <span className="mt-1">Click <strong>"Save"</strong> and hit join!</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">2</span> <span className="mt-1">Click <strong>Play</strong> and the <strong>Servers</strong> tab.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">3</span> <span className="mt-1">Scroll down and click <strong>Add Server</strong>.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">4</span> <span className="mt-1">Enter IP: <strong>{serverIP}</strong> (Port: 19132)</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">5</span> <span className="mt-1">Click <strong>Save</strong> and click to join!</span></li>
                      </ol>
                   </div>
                 </div>
 
-                {/* Screenshot Placeholder Area */}
-                <div className="w-full bg-[#0a0a16]/50 border-2 border-dashed border-purple-500/30 rounded-[2rem] p-12 flex flex-col items-center justify-center text-center aspect-video relative overflow-hidden group hover:border-purple-500/60 transition-colors duration-300">
+                {/* Screenshot Area */}
+                <div className="w-full bg-[#0a0a16]/50 border-2 border-dashed border-purple-500/30 rounded-[2rem] flex flex-col items-center justify-center text-center aspect-video relative overflow-hidden group hover:border-purple-500/60 transition-colors duration-300">
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent pointer-events-none" />
-                  
-                  {/* Replace everything inside this div with your <img src="..." /> tag */}
                   <img 
-                    src="https://cdn.discordapp.com/attachments/1490432988389970093/1493913298087841832/2026-04-15_11.57.40.png?ex=69e0b2ad&is=69df612d&hm=6267afe9b40fcc2c86e62b2cb382d5d2e70a022408c9be9c78fcd7cf55565935&" 
+                    src="YOUR_IMAGE_LINK_HERE" 
                     alt="Server Screenshot" 
                     className="w-full h-full object-cover rounded-[1.8rem] z-10" 
                   />
-
                 </div>
               </div>
             </motion.div>
