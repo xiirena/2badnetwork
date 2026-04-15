@@ -194,7 +194,7 @@ export default function App() {
                   className="mb-6"
                 >
                   <span className="inline-block py-1 px-3 rounded-full border text-xs font-medium tracking-widest uppercase mb-6" style={{ borderColor: 'rgba(168,85,247,0.3)', background: 'rgba(139,92,246,0.1)', color: '#c084fc' }}>
-                    Season 4 is Live
+                    Season I is live!
                   </span>
                 </motion.div>
 
