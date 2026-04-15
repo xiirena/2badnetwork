@@ -9,7 +9,7 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 );
 
-tsconfig.json:
+tsconfig.json;
 
 {
   "compilerOptions": {
