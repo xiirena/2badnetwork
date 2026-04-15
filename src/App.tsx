@@ -546,13 +546,11 @@ export default function App() {
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent pointer-events-none" />
                   
                   {/* Replace everything inside this div with your <img src="..." /> tag */}
-                  <div className="flex flex-col items-center justify-center z-10">
-                    <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="mb-6">
-                      <ImageIcon className="text-purple-500/40 w-20 h-20 group-hover:text-purple-400 transition-colors" />
-                    </motion.div>
-                    <h4 className="font-display text-2xl uppercase font-black text-white/80 mb-2 tracking-widest">[ YOUR SCREENSHOT HERE ]</h4>
-                    <p className="text-white/40 max-w-sm">Replace this block with an image tag showcasing your server lobby or gameplay.</p>
-                  </div>
+                  <img 
+                    src="https://cdn.discordapp.com/attachments/1490432988389970093/1493913298087841832/2026-04-15_11.57.40.png?ex=69e0b2ad&is=69df612d&hm=6267afe9b40fcc2c86e62b2cb382d5d2e70a022408c9be9c78fcd7cf55565935&" 
+                    alt="Server Screenshot" 
+                    className="w-full h-full object-cover rounded-[1.8rem] z-10" 
+                  />
 
                 </div>
               </div>
