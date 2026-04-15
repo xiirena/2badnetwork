@@ -8,15 +8,14 @@ import {
   Shield, 
   Swords, 
   Crown,
-  Twitter,
-  Youtube,
-  Twitch,
-  Send,
   Skull,
   Clock,
   Euro,
   Star,
-  Zap
+  Zap,
+  Monitor,
+  Smartphone,
+  Image as ImageIcon
 } from 'lucide-react';
 
 // --- Leaderboard Data ---
@@ -365,18 +364,22 @@ export default function App() {
             <motion.div key="store" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="min-h-screen pt-32 pb-20">
               <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-20">
-                  <h2 className="font-display text-5xl md:text-7xl uppercase tracking-tight mb-4 text-white font-black">Choose Your <span style={{ background: 'linear-gradient(to right,#f97316,#ef4444)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Rank</span></h2>
+                  <h2 className="font-display text-5xl md:text-7xl uppercase tracking-tight mb-4 text-white font-black">Choose Your <span style={{ background: 'linear-gradient(to right,#a855f7,#7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Rank</span></h2>
                   <p className="text-white/60 max-w-2xl mx-auto">Support the server and unlock exclusive perks, kits, and cosmetics.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {/* VIP */}
-                  <motion.div whileHover={{ y: -10, boxShadow: '0 0 30px rgba(99,102,241,0.2)' }} className="rounded-3xl p-8 flex flex-col relative overflow-hidden group border" style={{ background: '#0d0b1a', borderColor: 'rgba(139,92,246,0.15)' }}>
-                    <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(99,102,241,0.1)' }} />
+                  <motion.div 
+                    whileHover={{ y: -10, boxShadow: '0 0 60px rgba(99,102,241,0.4)', borderColor: 'rgba(99,102,241,0.8)' }} 
+                    className="rounded-3xl p-8 flex flex-col relative overflow-hidden group transition-colors duration-300" 
+                    style={{ background: '#0a0a16', border: '1px solid rgba(99,102,241,0.3)', boxShadow: '0 0 20px rgba(99,102,241,0.15)' }}
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl pointer-events-none transition-colors duration-300" style={{ background: 'rgba(99,102,241,0.15)' }} />
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(99,102,241,0.15)', color: '#818cf8' }}>
                       <Shield size={28} />
                     </div>
-                    <h3 className="font-display text-3xl uppercase tracking-wide mb-2 text-white font-bold">VIP</h3>
+                    <h3 className="font-display text-4xl uppercase tracking-wide mb-2 text-white font-black drop-shadow-[0_0_10px_rgba(99,102,241,0.5)]">VIP</h3>
                     <div className="flex items-baseline gap-1 mb-6">
                       <span className="text-4xl font-bold text-white">€4.99</span>
                       <span className="text-white/40 text-sm">/lifetime</span>
@@ -386,20 +389,25 @@ export default function App() {
                         <li key={p} className="flex items-center gap-3 text-white/70 text-sm"><Check size={16} style={{ color: '#818cf8' }} /> {p}</li>
                       ))}
                     </ul>
-                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full py-4 rounded-xl font-bold transition-all text-white hover:bg-[#818cf8]/10" style={{ border: '1px solid rgba(99,102,241,0.4)', color: '#818cf8' }}>
+                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full py-4 rounded-xl font-bold transition-all text-white hover:bg-[#818cf8]/20" style={{ border: '1px solid rgba(99,102,241,0.5)', color: '#818cf8', boxShadow: '0 0 15px rgba(99,102,241,0.2)' }}>
                       Purchase VIP
                     </motion.button>
                   </motion.div>
 
                   {/* MVP */}
-                  <motion.div whileHover={{ y: -10, boxShadow: '0 0 40px rgba(168,85,247,0.3)' }} className="rounded-3xl p-8 flex flex-col relative overflow-hidden group border" style={{ background: '#0d0b1a', borderColor: 'rgba(168,85,247,0.35)' }}>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-b-lg" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}>
+                  <motion.div 
+                    whileHover={{ y: -10, boxShadow: '0 0 60px rgba(168,85,247,0.5)', borderColor: 'rgba(168,85,247,0.8)' }} 
+                    className="rounded-3xl p-8 flex flex-col relative overflow-hidden group transition-colors duration-300" 
+                    style={{ background: '#0a0a16', border: '1px solid rgba(168,85,247,0.4)', boxShadow: '0 0 20px rgba(168,85,247,0.2)' }}
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl pointer-events-none transition-colors duration-300" style={{ background: 'rgba(168,85,247,0.15)' }} />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 text-white text-xs font-bold uppercase tracking-wider py-1 px-6 rounded-b-lg shadow-[0_0_15px_rgba(168,85,247,0.5)]" style={{ background: '#a855f7' }}>
                       Popular
                     </div>
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 mt-4" style={{ background: 'rgba(168,85,247,0.15)', color: '#c084fc' }}>
                       <Swords size={28} />
                     </div>
-                    <h3 className="font-display text-3xl uppercase tracking-wide mb-2 text-white font-bold">MVP</h3>
+                    <h3 className="font-display text-4xl uppercase tracking-wide mb-2 text-white font-black drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">MVP</h3>
                     <div className="flex items-baseline gap-1 mb-6">
                       <span className="text-4xl font-bold text-white">€6.99</span>
                       <span className="text-white/40 text-sm">/lifetime</span>
@@ -409,17 +417,22 @@ export default function App() {
                         <li key={p} className="flex items-center gap-3 text-white/70 text-sm"><Check size={16} style={{ color: '#c084fc' }} /> {p}</li>
                       ))}
                     </ul>
-                    <motion.button whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(168,85,247,0.5)' }} whileTap={{ scale: 0.95 }} className="w-full py-4 rounded-xl font-bold text-white transition-all" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}>
+                    <motion.button whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(168,85,247,0.7)' }} whileTap={{ scale: 0.95 }} className="w-full py-4 rounded-xl font-bold text-white transition-all" style={{ background: '#a855f7' }}>
                       Purchase MVP
                     </motion.button>
                   </motion.div>
 
                   {/* Legend */}
-                  <motion.div whileHover={{ y: -10, boxShadow: '0 0 30px rgba(251,191,36,0.2)' }} className="rounded-3xl p-8 flex flex-col relative overflow-hidden group border" style={{ background: '#0d0b1a', borderColor: 'rgba(251,191,36,0.2)' }}>
+                  <motion.div 
+                    whileHover={{ y: -10, boxShadow: '0 0 60px rgba(251,191,36,0.4)', borderColor: 'rgba(251,191,36,0.8)' }} 
+                    className="rounded-3xl p-8 flex flex-col relative overflow-hidden group transition-colors duration-300" 
+                    style={{ background: '#0a0a16', border: '1px solid rgba(251,191,36,0.3)', boxShadow: '0 0 20px rgba(251,191,36,0.15)' }}
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl pointer-events-none transition-colors duration-300" style={{ background: 'rgba(251,191,36,0.1)' }} />
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(251,191,36,0.12)', color: '#fbbf24' }}>
                       <Star size={28} />
                     </div>
-                    <h3 className="font-display text-3xl uppercase tracking-wide mb-2 text-white font-bold">Legend</h3>
+                    <h3 className="font-display text-4xl uppercase tracking-wide mb-2 text-white font-black drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">Legend</h3>
                     <div className="flex items-baseline gap-1 mb-6">
                       <span className="text-4xl font-bold text-white">€9.99</span>
                       <span className="text-white/40 text-sm">/lifetime</span>
@@ -429,17 +442,22 @@ export default function App() {
                         <li key={p} className="flex items-center gap-3 text-white/70 text-sm"><Check size={16} style={{ color: '#fbbf24' }} /> {p}</li>
                       ))}
                     </ul>
-                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full py-4 rounded-xl font-bold transition-all hover:bg-[#fbbf24]/10" style={{ border: '1px solid rgba(251,191,36,0.35)', color: '#fbbf24' }}>
+                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full py-4 rounded-xl font-bold transition-all hover:bg-[#fbbf24]/20" style={{ border: '1px solid rgba(251,191,36,0.5)', color: '#fbbf24', boxShadow: '0 0 15px rgba(251,191,36,0.2)' }}>
                       Purchase Legend
                     </motion.button>
                   </motion.div>
 
                   {/* Elite */}
-                  <motion.div whileHover={{ y: -10, boxShadow: '0 0 30px rgba(251,113,133,0.2)' }} className="rounded-3xl p-8 flex flex-col relative overflow-hidden group border" style={{ background: '#0d0b1a', borderColor: 'rgba(251,113,133,0.2)' }}>
+                  <motion.div 
+                    whileHover={{ y: -10, boxShadow: '0 0 60px rgba(251,113,133,0.4)', borderColor: 'rgba(251,113,133,0.8)' }} 
+                    className="rounded-3xl p-8 flex flex-col relative overflow-hidden group transition-colors duration-300" 
+                    style={{ background: '#0a0a16', border: '1px solid rgba(251,113,133,0.3)', boxShadow: '0 0 20px rgba(251,113,133,0.15)' }}
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl pointer-events-none transition-colors duration-300" style={{ background: 'rgba(251,113,133,0.1)' }} />
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(251,113,133,0.12)', color: '#fb7185' }}>
                       <Crown size={28} />
                     </div>
-                    <h3 className="font-display text-3xl uppercase tracking-wide mb-2 text-white font-bold">Elite</h3>
+                    <h3 className="font-display text-4xl uppercase tracking-wide mb-2 text-white font-black drop-shadow-[0_0_10px_rgba(251,113,133,0.5)]">Elite</h3>
                     <div className="flex items-baseline gap-1 mb-6">
                       <span className="text-4xl font-bold text-white">€11.99</span>
                       <span className="text-white/40 text-sm">/lifetime</span>
@@ -449,7 +467,7 @@ export default function App() {
                         <li key={p} className="flex items-center gap-3 text-white/70 text-sm"><Check size={16} style={{ color: '#fb7185' }} /> {p}</li>
                       ))}
                     </ul>
-                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full py-4 rounded-xl font-bold transition-all hover:bg-[#fb7185]/10" style={{ border: '1px solid rgba(251,113,133,0.35)', color: '#fb7185' }}>
+                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full py-4 rounded-xl font-bold transition-all hover:bg-[#fb7185]/20" style={{ border: '1px solid rgba(251,113,133,0.5)', color: '#fb7185', boxShadow: '0 0 15px rgba(251,113,133,0.2)' }}>
                       Purchase Elite
                     </motion.button>
                   </motion.div>
@@ -482,47 +500,60 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* ===== CONNECT PAGE ===== */}
+          {/* ===== CONNECT PAGE (NEW GUIDE) ===== */}
           {activeTab === 'connect' && (
             <motion.div key="connect" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.05 }} className="min-h-screen pt-32 pb-20">
-              <div className="max-w-3xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <div className="text-center mb-16">
-                  <h2 className="font-display text-5xl uppercase tracking-tight mb-4 text-white font-black">Get In <span style={{ background: 'linear-gradient(to right,#a855f7,#7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Touch</span></h2>
-                  <p className="text-white/60">Have a question, want to appeal a ban, or apply for staff? Send us a message.</p>
+                  <h2 className="font-display text-5xl md:text-6xl uppercase tracking-tight mb-4 text-white font-black">How to <span style={{ background: 'linear-gradient(to right,#a855f7,#7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Connect</span></h2>
+                  <p className="text-white/60 text-lg">Join the 2BAD MC network on either Java or Bedrock Edition!</p>
                 </div>
 
-                <div className="rounded-3xl p-8 md:p-12 border" style={{ background: '#0d0b1a', borderColor: 'rgba(139,92,246,0.2)' }}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Minecraft IGN</label>
-                      <input type="text" placeholder="Notch" className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500 transition-colors" style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }} />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Discord Tag</label>
-                      <input type="text" placeholder="Username#0000" className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500 transition-colors" style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }} />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                  {/* Java Instructions */}
+                  <div className="bg-[#0d0b1a] border border-blue-900/40 hover:border-blue-500/60 rounded-[2rem] p-8 shadow-[0_0_30px_rgba(59,130,246,0.05)] hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-all duration-300">
+                     <h3 className="text-2xl font-black uppercase text-blue-400 mb-6 flex items-center gap-3"><Monitor size={28} /> Java Edition</h3>
+                     <ol className="space-y-5 text-white/70">
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">1</span> <span className="mt-1">Open Minecraft Java Edition (Version 1.21+).</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">2</span> <span className="mt-1">Click on <strong>"Multiplayer"</strong> and then <strong>"Add Server"</strong>.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">3</span> <span className="mt-1">Set Server Address to <strong className="text-white selection:bg-blue-500">{serverIP}</strong>.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">4</span> <span className="mt-1">Click <strong>"Done"</strong> and double-click to join!</span></li>
+                     </ol>
                   </div>
-                  <div className="mb-6">
-                    <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Inquiry Type</label>
-                    <select className="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors appearance-none" style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }}>
-                      <option>General Support</option>
-                      <option>Store / Purchase Issue</option>
-                      <option>Ban Appeal</option>
-                      <option>Staff Application</option>
-                    </select>
+
+                  {/* Bedrock Instructions */}
+                  <div className="bg-[#0d0b1a] border border-purple-900/40 hover:border-purple-500/60 rounded-[2rem] p-8 shadow-[0_0_30px_rgba(168,85,247,0.05)] hover:shadow-[0_0_40px_rgba(168,85,247,0.15)] transition-all duration-300">
+                     <h3 className="text-2xl font-black uppercase text-purple-400 mb-6 flex items-center gap-3"><Smartphone size={28} /> Bedrock Edition</h3>
+                     <ol className="space-y-5 text-white/70">
+                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">1</span> <span className="mt-1">Open Minecraft Bedrock Edition.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">2</span> <span className="mt-1">Click <strong>"Play"</strong> and navigate to the <strong>"Servers"</strong> tab.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">3</span> <span className="mt-1">Scroll to the bottom and click <strong>"Add Server"</strong>.</span></li>
+                       <li className="flex gap-4 items-start">
+                         <span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">4</span> 
+                         <div className="mt-1">
+                           Server Name: <strong className="text-white">2BAD MC</strong><br/>
+                           Server Address: <strong className="text-white selection:bg-purple-500">{serverIP}</strong><br/>
+                           Port: <strong className="text-white">19132</strong>
+                         </div>
+                       </li>
+                       <li className="flex gap-4 items-start"><span className="text-purple-500 font-black text-lg bg-purple-500/10 px-3 py-1 rounded-lg">5</span> <span className="mt-1">Click <strong>"Save"</strong> and hit join!</span></li>
+                     </ol>
                   </div>
-                  <div className="mb-8">
-                    <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Message</label>
-                    <textarea rows={5} placeholder="How can we help you?" className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500 transition-colors resize-none" style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }}></textarea>
+                </div>
+
+                {/* Screenshot Placeholder Area */}
+                <div className="w-full bg-[#0a0a16]/50 border-2 border-dashed border-purple-500/30 rounded-[2rem] p-12 flex flex-col items-center justify-center text-center aspect-video relative overflow-hidden group hover:border-purple-500/60 transition-colors duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent pointer-events-none" />
+                  
+                  {/* Replace everything inside this div with your <img src="..." /> tag */}
+                  <div className="flex flex-col items-center justify-center z-10">
+                    <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="mb-6">
+                      <ImageIcon className="text-purple-500/40 w-20 h-20 group-hover:text-purple-400 transition-colors" />
+                    </motion.div>
+                    <h4 className="font-display text-2xl uppercase font-black text-white/80 mb-2 tracking-widest">[ YOUR SCREENSHOT HERE ]</h4>
+                    <p className="text-white/40 max-w-sm">Replace this block with an image tag showcasing your server lobby or gameplay.</p>
                   </div>
-                  <motion.button 
-                    whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(168,85,247,0.4)' }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full font-bold uppercase tracking-wider py-4 rounded-xl transition-colors flex items-center justify-center gap-2 group text-white" 
-                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-                  >
-                    <Send size={18} /> Send Message
-                  </motion.button>
+
                 </div>
               </div>
             </motion.div>
