@@ -517,7 +517,8 @@ export default function App() {
                        <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">1</span> <span className="mt-1">Open Minecraft Java Edition (Version 1.21+).</span></li>
                        <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">2</span> <span className="mt-1">Click on <strong>"Multiplayer"</strong> and then <strong>"Add Server"</strong>.</span></li>
                        <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">3</span> <span className="mt-1">Set Server Address to <strong className="text-white selection:bg-blue-500">{serverIP}</strong>.</span></li>
-                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">4</span> <span className="mt-1">Click <strong>"Done"</strong> and double-click to join!</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">4</span> <span className="mt-1">Set the server name to </strong>2Bad MC.</span></li>
+                       <li className="flex gap-4 items-start"><span className="text-blue-500 font-black text-lg bg-blue-500/10 px-3 py-1 rounded-lg">5</span> <span className="mt-1">Click <strong>"Done"</strong> and double-click to join!</span></li>
                      </ol>
                   </div>
 
