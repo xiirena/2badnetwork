@@ -21,21 +21,21 @@ import {
 
 // --- Leaderboard Data ---
 const killsLeaderboard = [
-  { rank: 1, username: 'xX_Slayer_Xx', discord: 'slayer#0001', skin: 'MHF_Herobrine', stat: '4,821 kills' },
-  { rank: 2, username: 'DarkReaper99', discord: 'reaper#4242', skin: 'MHF_Steve', stat: '3,560 kills' },
-  { rank: 3, username: 'BladeStorm', discord: 'blade#7777', skin: 'MHF_Alex', stat: '2,904 kills' },
+  { rank: 1, username: '.', discord: '.', skin: '.', stat: '0 kills' },
+  { rank: 2, username: '.', discord: '.', skin: '.', stat: '0 kills' },
+  { rank: 3, username: '.', discord: '.', skin: '.', stat: '0 kills' },
 ];
 
 const playtimeLeaderboard = [
-  { rank: 1, username: 'NoLifeKing', discord: 'nlking#0420', skin: 'MHF_Steve', stat: '1,240 hrs' },
-  { rank: 2, username: 'GrindMaster', discord: 'grind#9900', skin: 'MHF_Alex', stat: '987 hrs' },
-  { rank: 3, username: 'AlwaysOnline', discord: 'aon#1337', skin: 'MHF_Herobrine', stat: '812 hrs' },
+  { rank: 1, username: '.', discord: '.', skin: '.', stat: '0' },
+  { rank: 2, username: '.', discord: '.', skin: '.', stat: '0' },
+  { rank: 3, username: '.', discord: '.', skin: '.', stat: '0' },
 ];
 
 const spendingLeaderboard = [
-  { rank: 1, username: 'RichKid2024', discord: 'richkid#0001', skin: 'MHF_Alex', stat: '€89.94' },
-  { rank: 2, username: 'BigSpender', discord: 'bigsp#5555', skin: 'MHF_Steve', stat: '€71.94' },
-  { rank: 3, username: 'WhaleMode', discord: 'whale#8888', skin: 'MHF_Herobrine', stat: '€59.95' },
+  { rank: 1, username: '.', discord: '.', skin: '.', stat: '0' },
+  { rank: 2, username: '.', discord: '.', skin: '.', stat: '0' },
+  { rank: 3, username: '.', discord: '.', skin: '.', stat: '0' },
 ];
 
 const rankColors: Record<number, string> = {
@@ -71,7 +71,7 @@ function LeaderboardSection({ title, icon, data, statLabel }: {
             className="flex items-center gap-5 bg-[#13102a] border border-purple-900/30 rounded-2xl px-5 py-4"
           >
             <span className="font-display text-3xl w-8 text-center" style={{ color: rankColors[entry.rank] }}>
-              {entry.rank === 1 ? '👑' : `#${entry.rank}`}
+              {entry.rank === 1 ? '#1' : `#${entry.rank}`}
             </span>
             <img
               src={getSkinUrl(entry.skin)}
@@ -96,7 +96,7 @@ function LeaderboardSection({ title, icon, data, statLabel }: {
 export default function App() {
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState<'home' | 'store' | 'leaderboards' | 'connect'>('home');
-  const serverIP = "play.2badmc.net";
+  const serverIP = "2badmc.play.hosting";
 
   const copyIP = () => {
     navigator.clipboard.writeText(serverIP);
@@ -218,7 +218,7 @@ export default function App() {
                   transition={{ duration: 0.8, delay: 0.3 }}
                   className="text-lg md:text-xl text-white/60 max-w-2xl mb-12 font-light"
                 >
-                  The ultimate survival and factions experience. Join thousands of players in a world where only the strongest survive.
+                  The best Kit PVP server/community 1.21-1.21.11 supports Java and Bedrock Edition.
                 </motion.p>
 
                 <motion.div
@@ -246,7 +246,7 @@ export default function App() {
                     style={{ background: '#5865F2' }}
                   >
                     <MessageSquare size={20} />
-                    <span>Join Discord</span>
+                    <span>Join Our Discord</span>
                   </a>
                 </motion.div>
               </div>
@@ -259,13 +259,13 @@ export default function App() {
                   <h2 className="font-display text-5xl md:text-6xl uppercase tracking-tight mb-4 text-white">
                     Why <span style={{ background: 'linear-gradient(to right,#a855f7,#7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>2Bad MC?</span>
                   </h2>
-                  <p className="text-white/50 max-w-xl mx-auto">Everything you need for the ultimate Minecraft experience.</p>
+                  <p className="text-white/50 max-w-xl mx-auto">We offer a nice & active community with a good staff team.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {[
-                    { icon: <Skull size={28} />, title: 'Hardcore PvP', desc: 'Fierce factions warfare and ruthless PvP arenas where every fight counts.' },
-                    { icon: <Zap size={28} />, title: 'Active Events', desc: 'Weekly events, drop parties, and tournaments with real rewards.' },
-                    { icon: <Star size={28} />, title: 'Thriving Community', desc: '12,000+ players, active Discord, and staff that actually cares.' },
+                    { icon: <Skull size={28} />, title: 'Kit PVP', desc: 'Kit pvp claim a kit and go conquer.' },
+                    { icon: <Zap size={28} />, title: 'Weekly Events', desc: 'Fun events for special rewards.' },
+                    { icon: <Star size={28} />, title: 'Growing Community', desc: 'Active Discord, and a staff team that actually cares.' },
                   ].map((f, i) => (
                     <motion.div
                       key={i}
@@ -293,13 +293,10 @@ export default function App() {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-12">
                   <div className="md:w-1/2">
                     <h2 className="font-display text-5xl uppercase tracking-tight mb-6 text-white">Join Our <br/><span style={{ background: 'linear-gradient(to right,#a855f7,#7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Community</span></h2>
-                    <p className="text-white/60 mb-8 text-lg">Stay updated with the latest server news, events, and giveaways by following our social media channels.</p>
+                    <p className="text-white/60 mb-8 text-lg">Stay updated with the latest server news, events, and giveaways.</p>
                     <div className="grid grid-cols-2 gap-4">
                       {[
-                        { icon: <MessageSquare size={24} />, name: 'Discord', sub: '12,450 Members', color: '#5865F2' },
-                        { icon: <Twitter size={24} />, name: 'Twitter', sub: '@2BadMC', color: '#1DA1F2' },
-                        { icon: <Youtube size={24} />, name: 'YouTube', sub: 'Server Trailers', color: '#FF0000' },
-                        { icon: <Twitch size={24} />, name: 'Twitch', sub: 'Live Events', color: '#9146FF' },
+                        { icon: <MessageSquare size={24} />, name: 'Discord', sub: 'Growing 📈', color: '#5865F2' },
                       ].map((s) => (
                         <a key={s.name} href="#" className="flex items-center gap-4 p-4 rounded-2xl border transition-all group" style={{ background: '#0d0b1a', borderColor: 'rgba(139,92,246,0.2)' }}>
                           <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors" style={{ background: `${s.color}18`, color: s.color }}>
@@ -312,24 +309,7 @@ export default function App() {
                         </a>
                       ))}
                     </div>
-                  </div>
-                  <div className="md:w-1/2 w-full">
-                    <div className="relative rounded-3xl overflow-hidden border aspect-video" style={{ borderColor: 'rgba(139,92,246,0.2)' }}>
-                      <img src="https://picsum.photos/seed/minecraft-community/800/450" alt="Minecraft Community" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                      <div className="absolute inset-0 flex items-end p-8" style={{ background: 'linear-gradient(to top, rgba(6,5,15,0.85), transparent)' }}>
-                        <div>
-                          <div className="flex items-center gap-2 mb-2" style={{ color: '#a855f7' }}>
-                            <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#a855f7' }} />
-                            <span className="text-sm font-bold uppercase tracking-wider">Live Event</span>
-                          </div>
-                          <h3 className="text-2xl font-bold text-white">Saturday Night Factions</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+                  </section>
 
             {/* Footer */}
             <footer className="border-t border-purple-900/20 py-12 relative z-10" style={{ background: '#06050f' }}>
