@@ -12,11 +12,11 @@ createRoot(document.getElementById('root')!).render(
 tsconfig.json;
 
 {
-  "compilerOptions": {
+  "compilerOptions"; {
     "target": "ES2022",
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
-    "module": "ESNext",
+    "module"; "ESNext",
     "lib": [
       "ES2022",
       "DOM",
