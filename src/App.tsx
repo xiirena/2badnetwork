@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { 
   Gamepad2, 
   Copy, 
@@ -112,7 +112,6 @@ export default function App() {
           position: 'absolute', inset: 0,
           background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120,60,220,0.18) 0%, transparent 70%)',
         }} />
-        {/* Subtle star dots */}
         {Array.from({ length: 60 }).map((_, i) => (
           <div
             key={i}
@@ -165,7 +164,6 @@ export default function App() {
             Play Now
           </button>
         </div>
-        {/* Mobile tabs */}
         <div className="flex md:hidden items-center justify-center gap-1 pb-3 px-4">
           {(['home', 'store', 'leaderboards', 'connect'] as const).map((tab) => (
             <button
@@ -183,7 +181,6 @@ export default function App() {
       </nav>
 
       <div className="relative z-10">
-
         {/* ===== HOME PAGE ===== */}
         {activeTab === 'home' && (
           <div>
@@ -218,7 +215,7 @@ export default function App() {
                   transition={{ duration: 0.8, delay: 0.3 }}
                   className="text-lg md:text-xl text-white/60 max-w-2xl mb-12 font-light"
                 >
-                  The best Kit PVP server/community 1.21-1.21.11 supports Java and Bedrock Edition.
+                  The best Kit PVP server/community 1.21-1.21.1 supports Java and Bedrock Edition.
                 </motion.p>
 
                 <motion.div
@@ -287,7 +284,7 @@ export default function App() {
               </div>
             </section>
 
-            {/* Community/Socials preview on home */}
+            {/* Community/Socials */}
             <section className="py-20 border-y border-purple-900/20 relative z-10" style={{ background: 'rgba(13,11,26,0.6)' }}>
               <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -309,7 +306,10 @@ export default function App() {
                         </a>
                       ))}
                     </div>
-                  </section>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             {/* Footer */}
             <footer className="border-t border-purple-900/20 py-12 relative z-10" style={{ background: '#06050f' }}>
@@ -357,16 +357,13 @@ export default function App() {
                       <li key={p} className="flex items-center gap-3 text-white/70"><Check size={16} style={{ color: '#818cf8' }} /> {p}</li>
                     ))}
                   </ul>
-                  <button className="w-full py-4 rounded-xl font-semibold transition-all text-white" style={{ border: '1px solid rgba(99,102,241,0.4)', color: '#818cf8' }}
-                    onMouseEnter={e => { (e.target as HTMLButtonElement).style.background = '#4f46e5'; (e.target as HTMLButtonElement).style.color = '#fff'; }}
-                    onMouseLeave={e => { (e.target as HTMLButtonElement).style.background = 'transparent'; (e.target as HTMLButtonElement).style.color = '#818cf8'; }}>
+                  <button className="w-full py-4 rounded-xl font-semibold transition-all text-white" style={{ border: '1px solid rgba(99,102,241,0.4)', color: '#818cf8' }}>
                     Purchase VIP
                   </button>
                 </motion.div>
 
                 {/* MVP */}
                 <motion.div whileHover={{ y: -10 }} className="rounded-3xl p-8 flex flex-col relative overflow-hidden group border" style={{ background: '#0d0b1a', borderColor: 'rgba(168,85,247,0.35)', boxShadow: '0 0 40px rgba(168,85,247,0.1)' }}>
-                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(168,85,247,0.12)' }} />
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-b-lg" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}>
                     Popular
                   </div>
@@ -390,7 +387,6 @@ export default function App() {
 
                 {/* Legend */}
                 <motion.div whileHover={{ y: -10 }} className="rounded-3xl p-8 flex flex-col relative overflow-hidden group border" style={{ background: '#0d0b1a', borderColor: 'rgba(251,191,36,0.2)' }}>
-                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(251,191,36,0.07)' }} />
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(251,191,36,0.12)', color: '#fbbf24' }}>
                     <Star size={28} />
                   </div>
@@ -404,16 +400,13 @@ export default function App() {
                       <li key={p} className="flex items-center gap-3 text-white/70"><Check size={16} style={{ color: '#fbbf24' }} /> {p}</li>
                     ))}
                   </ul>
-                  <button className="w-full py-4 rounded-xl font-semibold transition-all" style={{ border: '1px solid rgba(251,191,36,0.35)', color: '#fbbf24' }}
-                    onMouseEnter={e => { (e.target as HTMLButtonElement).style.background = '#d97706'; (e.target as HTMLButtonElement).style.color = '#fff'; }}
-                    onMouseLeave={e => { (e.target as HTMLButtonElement).style.background = 'transparent'; (e.target as HTMLButtonElement).style.color = '#fbbf24'; }}>
+                  <button className="w-full py-4 rounded-xl font-semibold transition-all" style={{ border: '1px solid rgba(251,191,36,0.35)', color: '#fbbf24' }}>
                     Purchase Legend
                   </button>
                 </motion.div>
 
                 {/* Elite */}
                 <motion.div whileHover={{ y: -10 }} className="rounded-3xl p-8 flex flex-col relative overflow-hidden group border" style={{ background: '#0d0b1a', borderColor: 'rgba(251,113,133,0.2)' }}>
-                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(251,113,133,0.07)' }} />
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(251,113,133,0.12)', color: '#fb7185' }}>
                     <Crown size={28} />
                   </div>
@@ -427,9 +420,7 @@ export default function App() {
                       <li key={p} className="flex items-center gap-3 text-white/70"><Check size={16} style={{ color: '#fb7185' }} /> {p}</li>
                     ))}
                   </ul>
-                  <button className="w-full py-4 rounded-xl font-semibold transition-all" style={{ border: '1px solid rgba(251,113,133,0.35)', color: '#fb7185' }}
-                    onMouseEnter={e => { (e.target as HTMLButtonElement).style.background = '#e11d48'; (e.target as HTMLButtonElement).style.color = '#fff'; }}
-                    onMouseLeave={e => { (e.target as HTMLButtonElement).style.background = 'transparent'; (e.target as HTMLButtonElement).style.color = '#fb7185'; }}>
+                  <button className="w-full py-4 rounded-xl font-semibold transition-all" style={{ border: '1px solid rgba(251,113,133,0.35)', color: '#fb7185' }}>
                     Purchase Elite
                   </button>
                 </motion.div>
@@ -442,7 +433,6 @@ export default function App() {
         {activeTab === 'leaderboards' && (
           <div className="min-h-screen pt-32 pb-20">
             <div className="max-w-7xl mx-auto px-6">
-              {/* Big logo */}
               <div className="flex flex-col items-center mb-16">
                 <div className="flex items-center gap-5 mb-4">
                   <div className="w-20 h-20 rounded-2xl flex items-center justify-center transform -rotate-6" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)', boxShadow: '0 0 40px rgba(139,92,246,0.4)' }}>
@@ -455,24 +445,9 @@ export default function App() {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <LeaderboardSection
-                  title="Kills"
-                  icon={<Skull size={22} />}
-                  data={killsLeaderboard}
-                  statLabel="kills"
-                />
-                <LeaderboardSection
-                  title="Playtime"
-                  icon={<Clock size={22} />}
-                  data={playtimeLeaderboard}
-                  statLabel="hrs"
-                />
-                <LeaderboardSection
-                  title="Spending"
-                  icon={<Euro size={22} />}
-                  data={spendingLeaderboard}
-                  statLabel="€"
-                />
+                <LeaderboardSection title="Kills" icon={<Skull size={22} />} data={killsLeaderboard} statLabel="kills" />
+                <LeaderboardSection title="Playtime" icon={<Clock size={22} />} data={playtimeLeaderboard} statLabel="hrs" />
+                <LeaderboardSection title="Spending" icon={<Euro size={22} />} data={spendingLeaderboard} statLabel="€" />
               </div>
             </div>
           </div>
@@ -491,65 +466,33 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Minecraft IGN</label>
-                    <input
-                      type="text"
-                      placeholder="Notch"
-                      className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none transition-colors"
-                      style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }}
-                      onFocus={e => (e.target.style.borderColor = 'rgba(168,85,247,0.6)')}
-                      onBlur={e => (e.target.style.borderColor = 'rgba(139,92,246,0.2)')}
-                    />
+                    <input type="text" placeholder="Notch" className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none transition-colors" style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }} />
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Discord Tag</label>
-                    <input
-                      type="text"
-                      placeholder="Username#0000"
-                      className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none transition-colors"
-                      style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }}
-                      onFocus={e => (e.target.style.borderColor = 'rgba(168,85,247,0.6)')}
-                      onBlur={e => (e.target.style.borderColor = 'rgba(139,92,246,0.2)')}
-                    />
+                    <input type="text" placeholder="Username#0000" className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none transition-colors" style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }} />
                   </div>
                 </div>
-
                 <div className="mb-6">
                   <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Inquiry Type</label>
-                  <select
-                    className="w-full rounded-xl px-4 py-3 text-white focus:outline-none transition-colors appearance-none"
-                    style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }}
-                  >
+                  <select className="w-full rounded-xl px-4 py-3 text-white focus:outline-none transition-colors appearance-none" style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }}>
                     <option>General Support</option>
                     <option>Store / Purchase Issue</option>
                     <option>Ban Appeal</option>
                     <option>Staff Application</option>
                   </select>
                 </div>
-
                 <div className="mb-8">
                   <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Message</label>
-                  <textarea
-                    rows={5}
-                    placeholder="How can we help you?"
-                    className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none transition-colors resize-none"
-                    style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }}
-                    onFocus={e => (e.target.style.borderColor = 'rgba(168,85,247,0.6)')}
-                    onBlur={e => (e.target.style.borderColor = 'rgba(139,92,246,0.2)')}
-                  ></textarea>
+                  <textarea rows={5} placeholder="How can we help you?" className="w-full rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none transition-colors resize-none" style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(139,92,246,0.2)' }}></textarea>
                 </div>
-
-                <button
-                  className="w-full font-bold uppercase tracking-wider py-4 rounded-xl transition-colors flex items-center justify-center gap-2 group text-white"
-                  style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)', boxShadow: '0 0 24px rgba(139,92,246,0.25)' }}
-                >
-                  <span>Send Message</span>
-                  <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                <button className="w-full font-bold uppercase tracking-wider py-4 rounded-xl transition-colors flex items-center justify-center gap-2 group text-white" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}>
+                  <Send size={18} /> Send Message
                 </button>
               </div>
             </div>
           </div>
         )}
-
       </div>
     </div>
   );
