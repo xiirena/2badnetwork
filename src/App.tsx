@@ -539,7 +539,7 @@ export default function App() {
                 <div className="w-full bg-[#0a0a16]/50 border-2 border-dashed border-purple-500/30 rounded-[2rem] flex flex-col items-center justify-center text-center aspect-video relative overflow-hidden group hover:border-purple-500/60 transition-colors duration-300">
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent pointer-events-none" />
                   <img 
-                    src="YOUR_IMAGE_LINK_HERE" 
+                    src="https://cdn.discordapp.com/attachments/1490432988389970093/1493913298087841832/2026-04-15_11.57.40.png?ex=69e0b2ad&is=69df612d&hm=6267afe9b40fcc2c86e62b2cb382d5d2e70a022408c9be9c78fcd7cf55565935&" 
                     alt="Server Screenshot" 
                     className="w-full h-full object-cover rounded-[1.8rem] z-10" 
                   />
